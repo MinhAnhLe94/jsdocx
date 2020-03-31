@@ -92,8 +92,13 @@ export default class {
     return p
   }
 
-  addTable () {
-    let t = new Table()
+  addTable (value) {
+    let t;
+    if (value) {
+      t = new Table(value)
+    } else {
+      t = new Table()
+    }
     this.root().contents.push(t)
     return t
   }
